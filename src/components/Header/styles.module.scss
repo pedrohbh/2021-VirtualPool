@@ -1,0 +1,48 @@
+.header {
+    background-color: var(--green);
+    height: 5rem;
+}
+
+.content {
+    display: flex;
+
+    height: 5rem;
+    margin: auto 3rem;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navItems {
+    list-style: none;
+    
+    display: flex;
+
+    font-size: 2rem;
+
+    a {
+        padding: 0 2rem;
+
+        &:hover{
+            color: var(--yellow)  
+        } 
+    }
+}
+
+.activeLink {
+    color: var(--yellow) !important;
+}
+
+.divisor {
+    padding: 0 2rem;
+
+    &::after{
+        content: "|";
+        color: var(--yellow);
+        font-weight: 100;
+    }
+}
+
+.gambiarra {
+    width: 200px;
+}

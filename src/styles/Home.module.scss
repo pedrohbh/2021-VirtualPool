@@ -1,0 +1,27 @@
+.content {
+    margin: 0 auto;
+
+    display: flex;
+
+    justify-content: center;
+    flex-wrap: wrap;
+
+    width: 50rem;
+
+    .logo img {
+        padding-top: 10rem;
+        padding-bottom: 2rem;
+        width: 25rem;
+    }
+
+    .text {
+        color: var(--white);
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 1366px) {
+    .logo img {
+        padding-top: 5rem!important;
+    }
+}
