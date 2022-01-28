@@ -30,3 +30,13 @@ body {
   --white: #DFF2D8;
   --red: #F4442E;
 }
+
+.backgroudDegrade{
+  background: linear-gradient(to top, rgba(32, 32, 32, 0) 0%, var(--black) 100%);
+  border-radius: 70px;
+  opacity: 0.5;
+  margin-left: 10%;
+  margin-top: 1%;
+  width: 80%;
+  height: 80vh;
+}
