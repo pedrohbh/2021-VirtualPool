@@ -11,6 +11,18 @@ export default function Home() {
       <div className={styles.background}>
         <Header path="ranking"/>
         <div className={styles.backgroudDegrade}>
+            <table>
+              <tr>
+                <th>Posição</th>
+                <th>Usuário</th>
+                <th>Vitórias</th>
+              </tr>
+              <tr>
+                <td>1º</td>
+                <td>Baianinho</td>
+                <td>2</td>
+              </tr>
+            </table>
         </div>
       </div>
     </>

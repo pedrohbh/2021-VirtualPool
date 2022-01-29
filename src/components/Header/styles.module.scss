@@ -1,6 +1,7 @@
 .header {
     background-color: var(--green);
     height: 5rem;
+    border-bottom: 1px solid var(--black);
 }
 
 .content {
@@ -19,6 +20,7 @@
     display: flex;
 
     font-size: 2rem;
+    text-shadow: 2px 2px 3px black;
 
     a {
         padding: 0 2rem;
