@@ -13,7 +13,7 @@
     text-align: center;
     width: 20%;
     margin-top: 10%;
-    margin-left: 30%;
+    margin-left: 18%;
 }
 .perfil2{
     vertical-align: top;
@@ -21,6 +21,7 @@
     text-align: center;
     width: 20%;
     margin-top: 10%;
+    margin-left: 7%;
 }
 
 .imagePerfil{
@@ -37,20 +38,39 @@
 
 .vs{
     display: inline-block;
+    width: 10%;
+    margin-top: 13%;
+    margin-left: 7%;
+}
+
+.button {
+    padding: 15px 25px;
+    
+    font-size: 24px;
     text-align: center;
-    margin-top: 15%;
-    font-size: 2rem;
-    color: #ffffff;
-}
-
-.button{
-    font-size: 2rem;
-    color: var(--black);
+    text-shadow: 2px 2px 3px black;
+    color: #fff;
+    
+    width: 40%;;
+    
+    cursor: pointer;
+    
+    outline: none;
     background-color: var(--yellow);
-    border-radius: 15px;
-    margin-top: 6%;
-    margin-left: 31.5%;
-    width: 40%;
-    height: 6vh;
-}
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 7px #999;
+    margin-left: 30%;
+    margin-top: 5%;
 
+    &:hover{
+        background-color: #be9310;
+    }
+
+    &:active{
+        background-color: #be9310;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+  }
+  

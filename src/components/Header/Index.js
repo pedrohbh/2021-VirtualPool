@@ -8,7 +8,7 @@ export default function Header() {
     const {asPath} = useRouter();
     console.log(asPath);
 
-    var isLoggedIn = false;
+    var isLoggedIn = true;
 
     if (isLoggedIn) {
         var p = <Link href="/perfil" onClick={() => window.location.reload()}>Perfil</Link>;
@@ -27,9 +27,9 @@ export default function Header() {
                 <ul className={styles.navItems}>
                     <li className={asPath === '/ranking' ? styles.activeLink : null}><Link href="/ranking" onClick={() => window.location.reload()}>Ranking</Link></li>
                     <li><div className={styles.divisor}/></li>
-                    <li className={asPath === '/jogar' ? styles.activeLink : null}><Link href="/jogar" onClick={() => window.location.reload()}>Jogar</Link></li>
+                    <li className={(asPath === '/jogar' || asPath === '/pegarOp') ? styles.activeLink : null}><Link href="/jogar" onClick={() => window.location.reload()}>Jogar</Link></li>
                     <li><div className={styles.divisor}/></li>
-                    <li className={asPath === '/perfil' ? styles.activeLink : null}>{p}</li>
+                    <li className={asPath === '/perfil' ? styles.activeLink : null}><Link href="/perfil" onClick={() => window.location.reload()}>Perfil</Link></li>
                 </ul>
                 <div className={styles.gambiarra}/>
             </div>

@@ -11,16 +11,21 @@ export default function Home() {
       <div className={styles.background}>
         <Header path="ranking"/>
         <div className={styles.backgroudDegrade}>
-            <table>
+            <table className={styles.table}>
               <tr>
-                <th>Posição</th>
-                <th>Usuário</th>
-                <th>Vitórias</th>
+                <th className={styles.th}>Posição</th>
+                <th className={styles.th}>Usuário</th>
+                <th className={styles.th}>Vitórias</th>
               </tr>
               <tr>
-                <td>1º</td>
-                <td>Baianinho</td>
-                <td>2</td>
+                <td className={styles.td}>1º</td>
+                <td className={styles.td}>Baianinho</td>
+                <td className={styles.td}>2</td>
+              </tr>
+              <tr>
+                <td className={styles.td}>2º</td>
+                <td className={styles.td}>Capixabinha</td>
+                <td className={styles.td}>10</td>
               </tr>
             </table>
         </div>

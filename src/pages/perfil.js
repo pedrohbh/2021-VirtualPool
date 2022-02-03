@@ -80,7 +80,26 @@ export default function Home() {
           <div className={styles.caixaStats}>
           <div className={styles.ultimasPartidas}>
             <span className={styles.texto}>Últimas partidas</span>
-            {listItems}
+            <table className={styles.table}>
+              <tr>
+                <th className={styles.th}>Resultado</th>
+                <th className={styles.th}>Oponente</th>
+                <th className={styles.th}>Data</th>
+                <th className={styles.th}>Duração</th>
+              </tr>
+              <tr>
+                <td className={styles.td}>Vitória</td>
+                <td className={styles.td}>josé</td>
+                <td className={styles.td}>02/02/2022</td>
+                <td className={styles.td}>14 minutos</td>
+              </tr>
+              <tr>
+                <td className={styles.td}>Vitória</td>
+                <td className={styles.td}>josé</td>
+                <td className={styles.td}>02/02/2022</td>
+                <td className={styles.td}>14 minutos</td>
+              </tr>
+            </table>
           </div>
           </div>
         </div>
