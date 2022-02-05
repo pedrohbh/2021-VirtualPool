@@ -8,15 +8,22 @@
     display: flex;
 
     height: 5rem;
-    margin: auto 3rem;
+    margin: auto 5vw;
 
     justify-content: space-between;
     align-items: center;
+
+    img {
+        &:hover{
+            filter: contrast(2);
+            cursor: pointer;
+        }
+    }
 }
 
 .navItems {
     list-style: none;
-    
+
     display: flex;
 
     font-size: 2rem;
@@ -25,9 +32,9 @@
     a {
         padding: 0 2rem;
 
-        &:hover{
-            color: var(--yellow)  
-        } 
+        &:hover {
+            color: var(--yellow);
+        }
     }
 }
 
@@ -38,7 +45,7 @@
 .divisor {
     padding: 0 2rem;
 
-    &::after{
+    &::after {
         content: "|";
         color: var(--yellow);
         font-weight: 100;
@@ -47,4 +54,13 @@
 
 .gambiarra {
     width: 200px;
+
+    display:flex;
+    justify-content: flex-end;
+
+    a, p {    
+        &:hover {
+            color: var(--yellow);
+        }
+    }
 }

@@ -1,12 +1,17 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 import Head from 'next/head'
+import { useState } from 'react';
 import Header from '../components/header'
 import styles from '../styles/Jogar.module.scss'
 
 export default function Home() {
+  const [img2, setImg2] = useState("./images/int.png");
+  const [opponent, setOpponent] = useState('');
+  
   var img = "./images/blank-profile-picture-973460__480.png";
   var name = "123 de Oliveira 4";
 
-  var img2 = "./images/int.png";
   var name2 = "";
 
   const sleep = (milliseconds) => {
@@ -14,8 +19,8 @@ export default function Home() {
   }
 
   async function searchOp(){
-    document.getElementById("opImg").src="./images/blank-profile-picture-973460__480.png";
-    document.getElementById("opText").innerHTML="Inimigo do 123";
+    setImg2("./images/blank-profile-picture-973460__480.png");
+    setOpponent("123 ennemy");
     await sleep(3000);
     window.location.href = "/jogo";
   }
@@ -33,8 +38,8 @@ export default function Home() {
           </div>
           <img  src="/images/vs.png" className={styles.vs}/>
           <div className={styles.perfil2}>
-              <img id="opImg" src={img2} className={styles.imagePerfil}/><br/>
-              <span id="opText" className={styles.textPerfil}>{name2}</span>
+              <img src={img2} className={styles.imagePerfil}/><br/>
+              <span className={styles.textPerfil}>{opponent}</span>
           </div>
           <div>
             <button className={styles.button} onClick={searchOp}><span>Buscar partida</span></button>

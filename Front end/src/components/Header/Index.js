@@ -5,14 +5,14 @@ import { useRouter } from "next/dist/client/router";
 import styles from './styles.module.scss';
 
 export default function Header() {
-    const {asPath} = useRouter();
-    console.log(asPath);
+    const { asPath } = useRouter();
 
-    var isLoggedIn = true;
+
+    const isLoggedIn = true;
 
     if (isLoggedIn) {
         var p = <Link href="/perfil" onClick={() => window.location.reload()}>Perfil</Link>;
-    }else{
+    } else {
         var p = <Link href="/cadastro" onClick={() => window.location.reload()}>Perfil</Link>;
     }
 
@@ -26,12 +26,22 @@ export default function Header() {
                 </div>
                 <ul className={styles.navItems}>
                     <li className={asPath === '/ranking' ? styles.activeLink : null}><Link href="/ranking" onClick={() => window.location.reload()}>Ranking</Link></li>
-                    <li><div className={styles.divisor}/></li>
+                    <li><div className={styles.divisor} /></li>
                     <li className={(asPath === '/jogar' || asPath === '/pegarOp') ? styles.activeLink : null}><Link href="/jogar" onClick={() => window.location.reload()}>Jogar</Link></li>
-                    <li><div className={styles.divisor}/></li>
+                    <li><div className={styles.divisor} /></li>
                     <li className={asPath === '/perfil' ? styles.activeLink : null}><Link href="/perfil" onClick={() => window.location.reload()}>Perfil</Link></li>
                 </ul>
-                <div className={styles.gambiarra}/>
+                <div className={styles.gambiarra}>
+                    {isLoggedIn ?
+                        (
+                            <p className={styles.session}>Sair</p>
+                        )
+                        :
+                        (
+                            <Link href="/entrar" className={styles.session}>Entrar / Registrar</Link>
+                        )
+                    }
+                </div>
             </div>
         </div>
     )
