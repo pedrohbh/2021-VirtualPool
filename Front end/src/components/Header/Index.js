@@ -10,12 +10,15 @@ export default function Header() {
 
     const isLoggedIn = true;
 
-    if (isLoggedIn) {
-        var p = <Link href="/perfil" onClick={() => window.location.reload()}>Perfil</Link>;
-    } else {
-        var p = <Link href="/cadastro" onClick={() => window.location.reload()}>Perfil</Link>;
+    function login(){
+        if (isLoggedIn) {
+            window.location.href = "/perfil";
+        } else {
+            window.location.href = "/cadastro";
+        }    
     }
 
+    
     return (
         <div className={styles.header}>
             <div className={styles.content}>

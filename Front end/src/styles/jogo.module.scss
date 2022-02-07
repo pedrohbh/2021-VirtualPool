@@ -13,6 +13,10 @@
     background-color: var(--green);
     width: 100%;
     height: 10vh;
+
+    & span{
+        margin-left: 40%;
+    }
 }
 
 .lateral{
@@ -22,3 +26,33 @@
     display: inline-block;
 }
 
+.button {
+    padding: 15px 5px;
+    
+    font-size: 24px;
+    text-align: center;
+    text-shadow: 2px 2px 3px black;
+    color: #fff;
+    
+    width: 4%;
+    
+    cursor: pointer;
+    
+    outline: none;
+    background-color: var(--yellow);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 7px #999;
+    margin-left: 1%;
+    margin-top: 0.7%;
+
+    &:hover{
+        background-color: #be9310;
+    }
+
+    &:active{
+        background-color: #be9310;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+    }
+  }
