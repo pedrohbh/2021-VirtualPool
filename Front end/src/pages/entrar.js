@@ -3,14 +3,14 @@
 import Head from 'next/head'
 import { useState } from 'react';
 import Header from '../components/header'
-import styles from '../styles/Cadastro.module.scss'
+import styles from '../styles/Entrar.module.scss'
 import { useRouter } from "next/dist/client/router";
 
 export default function Home() {
 
     const { asPath } = useRouter();
 
-    const [selected, setSelected] = useState(0)
+    const [selected, setSelected] = useState(0);
 
   return (
     <>
@@ -42,7 +42,7 @@ export default function Home() {
                             
                             <p> 
                                 <input type="checkbox" name="manterlogado" id="manterlogado" value="" /> 
-                                <label for="manterlogado">Manter-me logado</label>
+                                <label for="manterlogado"> Manter-me logado</label>
                             </p>
                             
                             <p> 
