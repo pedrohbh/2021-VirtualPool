@@ -25,9 +25,16 @@ export default function Home() {
                 <a className={styles.links} id="paralogin"></a>
         
                 <div className={styles.content}>
+                    <div  id={styles.login}>
+                        <form method="post" action="">
+                        <h1>Login</h1> 
+                            <p className={styles.link}> 
+                                <input type="submit" className={styles.icon} value="Logar com Google" onClick={()=>window.location.href = "/google"}/> 
+                            </p>
+                        </form>
+                    </div>
                     
-                    
-                    {(selected === 0) && <div id={styles.login}>
+                    {/*(selected === 0) && <div id={styles.login}>
                         <form method="post" action=""> 
                             <h1>Login</h1> 
                             <p> 
@@ -83,7 +90,7 @@ export default function Home() {
                             </p>
                         </form>
                             
-                    </div>}
+                    </div>*/}
                 </div>
             </div>  
         </div>
