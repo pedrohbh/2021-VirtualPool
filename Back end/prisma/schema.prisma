@@ -1,6 +1,3 @@
-
-
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -8,4 +5,28 @@ generator client {
 datasource db {
   provider = "sqlite"
   url      = "file:./dev.db"
+}
+
+model Jogador {
+  id       String @id @default(uuid())
+  nome     String
+  vitorias Int
+  derrotas Int
+  email    String
+  picture  String
+
+  @@map("jogador")
+  //partidas Partida[] @relation(references: [id])
+}
+
+model Partida {
+  id      String   @id @default(uuid())
+  duracao Int
+  data    DateTime 
+
+  //jogadores Jogador[] @relation(references: [id])
+
+  idPerdedor String @default(uuid())
+  idVencedor String @default(uuid())
+  @@map("partida")
 }

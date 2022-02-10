@@ -12,7 +12,7 @@ CREATE TABLE "jogador" (
 CREATE TABLE "partida" (
     "id" TEXT NOT NULL PRIMARY KEY,
     "duracao" INTEGER NOT NULL,
-    "data" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "data" DATETIME NOT NULL,
     "idPerdedor" TEXT NOT NULL,
     "idVencedor" TEXT NOT NULL
 );

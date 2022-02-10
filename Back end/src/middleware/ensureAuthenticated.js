@@ -9,9 +9,9 @@ export function ensureAuthenticated(request, response, next){
 
     if(!authToken) {
 
-        request.id = "none";
-        return next();
-        /*return response.status(401).json({errorCode: "token.invalid"});*/
+        /*request.id = "none";
+        return next();*/
+        return response.status(401).json({errorCode: "token.invalid"});
     }
 
     const[,token] = authToken.split(" ");

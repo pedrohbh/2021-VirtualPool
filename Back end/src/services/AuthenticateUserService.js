@@ -1,4 +1,7 @@
 import { google } from "googleapis";
+import prismaClient from "../prisma/index.js";
+import pkg from 'jsonwebtoken';
+const {sign} = pkg;
 
 class AuthenticateUserService {
     async execute(code) {
@@ -18,7 +21,49 @@ class AuthenticateUserService {
 
         const userData = await oauth2.userinfo.get({});
 
-        return userData.data;
+        //não sei como modificar daqui pra cima
+
+        const {id, email, picture} = userData.data;
+
+        let jogador = await prismaClient.jogador.findFirst({
+            where:{
+                id: id
+            }
+        });
+
+        if (!jogador){
+           jogador =  await prismaClient.jogador.create({
+                data:{
+                    id: id,
+                    email: email,
+                    vitorias: 0,
+                    derrotas: 0,
+                    nome: email.split("@")[0],
+                    picture: picture
+
+                }
+            });
+        }
+
+        const token = sign({
+            jogador: {
+                nome: jogador.nome,
+                id: jogador.id,
+                email: jogador.email,
+                vitorias: jogador.vitorias,
+                derrotas: jogador.derrotas,
+                picture: jogador.picture
+            }  
+        },
+        process.env.JWT_SECRET,
+        {
+            subject: jogador.id,
+            expiresIn: "1d"
+        }
+        );
+
+        //return userData.data;
+        return {token, jogador};
     }
 }
 
