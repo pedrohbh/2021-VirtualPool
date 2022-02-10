@@ -3,11 +3,25 @@ import { google } from "googleapis";
 import 'dotenv/config';
 import { router } from "./routes.js";
 import http from "http";
+import cors from "cors";
 import {Server} from "socket.io";
 
 const app = express();
 app.use(express.json());
 app.use(router);
+
+const serverHttp = http.createServer(app);
+
+const io = new Server(serverHttp, {
+    cors:{
+        origin: "*"
+    }
+});
+
+io.on("connection", socket => {
+    console.log(`Usuário conectado no socket ${socket.id}`);
+});
+
 
 app.get('/google', (req, res) => {
     const auth2client = new google.auth.OAuth2(
@@ -30,4 +44,5 @@ app.get('/signin/callback', (req, res) => {
     return res.json(code);
 })
 
-app.listen(4000, () => console.log("Virtual pool >>"));
+//serverHttp.listen(4000, () => console.log("Virtual pool >>"));
+export {serverHttp, io};

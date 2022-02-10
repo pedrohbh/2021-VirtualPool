@@ -8,9 +8,6 @@ export function ensureAuthenticated(request, response, next){
     const authToken = request.headers.authorization;
 
     if(!authToken) {
-
-        /*request.id = "none";
-        return next();*/
         return response.status(401).json({errorCode: "token.invalid"});
     }
 

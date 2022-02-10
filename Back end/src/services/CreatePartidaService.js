@@ -1,4 +1,5 @@
 import prismaClient from "../prisma/index.js";
+import {io} from "../app.js";
 
 class CreatePartidaService{
     async execute(id, duracao, data, idPerdedor, idVencedor){
@@ -14,6 +15,17 @@ class CreatePartidaService{
                 jogador: true
             }*/
         });
+
+        const infoWS = {
+            id: id,
+            duracao: parseInt(duracao),
+            data: data,
+            idVencedor: idVencedor,
+            idPerdedor: idPerdedor
+        }
+
+        io.emit("nova_partida");
+
         return partida;
     }
 }
