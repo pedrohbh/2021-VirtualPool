@@ -1,0 +1,17 @@
+{
+    "cSpell.words": [
+        "rtsd",
+        "userinfo"
+    ],
+    "cSpell.ignoreWords": [
+        "GOCSPX",
+        "NBRK",
+        "cpocvm",
+        "googleusercontent",
+        "htkq",
+        "signin"
+    ],
+    "[prisma]": {
+        "editor.defaultFormatter": "Prisma.prisma"
+    }
+}
