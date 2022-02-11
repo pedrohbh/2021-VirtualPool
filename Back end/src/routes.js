@@ -12,10 +12,10 @@ router.post("/authenticate", new AuthenticateUserController().handle);
 
 router.post("/partida", ensureAuthenticated, new CreatePartidaController().handle);
 
-router.post("/ranking", new RetrieveRankingController().handle);
+router.get("/ranking", new RetrieveRankingController().handle);
 
 router.get("/perfil", ensureAuthenticated, new RetrieveUserByIdController().handle);
 
-router.post("/matchHist", ensureAuthenticated, new RetrievePartidasByIdController().handle);
+router.get("/matchHist", ensureAuthenticated, new RetrievePartidasByIdController().handle);
 
 export { router }

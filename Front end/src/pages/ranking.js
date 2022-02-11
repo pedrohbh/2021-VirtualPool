@@ -10,9 +10,11 @@ export default function Home() {
 
   useEffect(() => {
     api.get('/ranking').then(response => {
-      setRanking(response.data);
+      setRanking(response.data.ranking);
     });
-  })
+  }, [])
+
+  console.log(ranking);
 
   return (
     <>
@@ -28,16 +30,17 @@ export default function Home() {
                 <th className={styles.th}>Usuário</th>
                 <th className={styles.th}>Vitórias</th>
               </tr>
-              {ranking.map( (jogador, key) => {
+              {
+              ranking.map( (jogador, key) => {
                 return(
                   <tr>
-                    <td className={styles.td}>{key}º</td>
+                    <td className={styles.td}>{key+1}º</td>
                     <td className={styles.td}>{jogador.nome}</td>
                     <td className={styles.td}>{jogador.vitorias}</td>
                   </tr>
                 );
-              })
-              }
+                })
+            }
             </table>
         </div>
       </div>
