@@ -1,12 +1,13 @@
 import { createContext, useState } from "react"
 import { useEffect } from "react";
 import { api } from "../services/api";
+import { useRouter } from 'next/router'
 
 export const AuthContext = createContext({})
 
 export function AuthProvider(props) {
+    const router = useRouter();
     const [user, setUser] = useState(null);
-    const [op, setOp] = useState(null);
     const signInUrl = 'https://accounts.google.com/o/oauth2/auth?redirect_uri=http://localhost:3000&client_id=218639380376-73spmg3ifncg0evje558kla6tb7jbqk4.apps.googleusercontent.com&response_type=code&scope=https://www.googleapis.com/auth/userinfo.profile+https://www.googleapis.com/auth/userinfo.email';
 
     
@@ -20,6 +21,7 @@ export function AuthProvider(props) {
         localStorage.setItem('@virtualpool:token', token);
 
         setUser(jogador);
+        router.push('/');
     };
 
     useEffect(() =>{
@@ -30,7 +32,6 @@ export function AuthProvider(props) {
             const [urlWithNoCode, afterCode] = url.split('?code=');
             const [code,] = afterCode.split('&');
 
-            window.history.pushState({}, '', urlWithNoCode)
             signIn(code);
         }
        

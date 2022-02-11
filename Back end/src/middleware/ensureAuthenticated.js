@@ -16,7 +16,7 @@ export function ensureAuthenticated(request, response, next){
         const {sub, jogador} = verify(token, process.env.JWT_SECRET);
 
         request.id = sub;
-        request.nome  = jogador.nome;
+        request.nome = jogador.nome;
 
         return next();
 
