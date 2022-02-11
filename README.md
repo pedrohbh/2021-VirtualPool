@@ -1,15 +1,24 @@
 # 2021-VirtualPool
-Assignment for the 2021 edition of the "Web Development and the Semantic Web" course, by Heleno Sales Mesquita, Andre Neves Prestes, Lucas Giovani de Paula Salgado and Victor David Lima
+Assignment for the 2021 edition of the "Web Development and the Semantic Web" course, by André Altoé, André Neves Prestes, Lucas Giovani de Paula Salgado and Victor David Lima
 
-### Instalações necessárias 
-- [ ] [Instalação do "yarn"](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable)
+## Programas necessários
+- [Yarn](https://yarnpkg.com/)
+- [Nodejs](https://nodejs.org/) - Por favor instalar versão 12.x ou superior
 
-### Comandos necessários 
-Apos a instalação do "yarn" é necessario rodar os comandos abaixo nas pastas front end e back end:
-- [ ] yarn
-- [ ] yarn dev 
+## Instalando as Dependências de projeto
+O projeto é divido em 'front end' e 'back end' e será necessário instalar as duas dependencias em suas respectivas pastas
 
-vale ressaltar que o segundo comando("yarn dev") executara os sevidores da aplicação então devera ficar em execução enquanto o projeto esta sendo utilizado.
-Depois de executar os comandos acima para ver a aplicação é necessário ir em um browser e entrar em:
+Execute o comando abaixo para instalar as dependências dentro de cada uma das pastas resignadas
+```
+yarn
+```
+Após a instalação das dependências é necessário executar os servidores execute o seguinte comando:
+```
+yarn dev
+```
 
-- [ ] http://localhost:3000
+## Para manter o funcionamento do projeto, mantenha um terminal para cada servidor aberto
+
+# Acessando a página do projeto
+Para acessar a página inicial do projeto, digite o seguinte o endereço no navegador:
+## [localhost:3000](localhost:3000)
