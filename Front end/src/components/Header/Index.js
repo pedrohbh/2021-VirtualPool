@@ -8,7 +8,6 @@ import { AuthContext } from '../../contexts/auth';
 
 export default function Header() {
     const { asPath } = useRouter();
-    const { user } = useContext(AuthContext);
     
     return (
         <div className={styles.header}>
@@ -23,9 +22,8 @@ export default function Header() {
                     <li><div className={styles.divisor} /></li>
                     <li className={(asPath === '/jogar' || asPath === '/pegarOp') ? styles.activeLink : null}><Link href="/jogar" onClick={() => window.location.reload()}>Jogar</Link></li>
                     <li><div className={styles.divisor} /></li>
+                    <li className={(asPath === '/perfil') ? styles.activeLink : null}><Link href="/perfil" onClick={() => window.location.reload()}>Perfil</Link></li>
                     
-                    {(logged === 1) && <li className={(asPath.includes('/perfil') || asPath.includes('/entrar')) ? styles.activeLink : null}><Link href="/perfil" onClick={() => window.location.reload()}>Perfil</Link></li>}
-                    {(logged === 0) && <li className={(asPath.includes('/perfil') || asPath.includes('/entrar')) ? styles.activeLink : null}><Link href="/entrar" onClick={() => window.location.reload()}>Perfil</Link></li>}
                 </ul>
                 <div className={styles.gambiarra}>
                     <GoogleLogin/>
@@ -35,4 +33,3 @@ export default function Header() {
     )
 
 }
-

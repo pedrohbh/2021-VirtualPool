@@ -2,10 +2,20 @@ import prismaClient from "../prisma/index.js";
 
 class RetrievePartidasByIdService{
     async execute(id){
-        const partidas = await prismaClient.jogador.findMany({
+        const partidas = await prismaClient.partidas.findMany({
+            orderBy: {
+                data: 'desc',
+            },
             take: 6,
             where:{
-                id: id
+                OR: [
+                    {
+                        idVencedor: id
+                    },
+                    {
+                        idPerdedor: id
+                    }
+                  ],
             }
         });
 
