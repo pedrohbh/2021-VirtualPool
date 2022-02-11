@@ -5,25 +5,14 @@ import { GetUserService } from "../services/GetUserService.js";
 
 class CreatePartidaController{
     async handle(request, response){
-        const { duracao } = request.body;
+        const { duracao , idOP, nomeop} = request.body;
 
-        const {id} = request;
-
-        const idService = new GetUserService();
-
-        const ids = idService.execute(); 
-        const idPerdedor = ids[0];
-        const idVencedor = ids[1];
+        const {id, nome} = request;
 
         const service = new CreatePartidaService();
 
-        const idpartida = Math.floor(Math.random() * 100000001).toString();
+        const result = await service.execute(parseInt(duracao), idOP, nomeop, id, nome);
 
-        var dt = new Date( Date.now() - 1000 * (60 * parseInt(duracao)));
-        dt.setHours(dt.getHours() - 3);
-
-        const result = await service.execute(idpartida, parseInt(duracao), dt, idPerdedor, idVencedor);
-        
         return response.json(result);
     }
 }

@@ -57,8 +57,7 @@ class AuthenticateUserService {
         },
         process.env.JWT_SECRET,
         {
-            subject: jogador.id,
-            expiresIn: "1d"
+            subject: jogador.id
         }
         );
 

@@ -14,5 +14,7 @@ CREATE TABLE "partida" (
     "duracao" INTEGER NOT NULL,
     "data" DATETIME NOT NULL,
     "idPerdedor" TEXT NOT NULL,
-    "idVencedor" TEXT NOT NULL
+    "idVencedor" TEXT NOT NULL,
+    "nomeVencedor" TEXT NOT NULL,
+    "nomePerdedor" TEXT NOT NULL
 );

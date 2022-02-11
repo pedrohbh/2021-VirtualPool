@@ -28,5 +28,7 @@ model Partida {
 
   idPerdedor String @default(uuid())
   idVencedor String @default(uuid())
+  nomeVencedor String
+  nomePerdedor String
   @@map("partida")
 }

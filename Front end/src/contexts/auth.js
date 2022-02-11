@@ -6,6 +6,7 @@ export const AuthContext = createContext({})
 
 export function AuthProvider(props) {
     const [user, setUser] = useState(null);
+    const [op, setOp] = useState(null);
     const signInUrl = 'https://accounts.google.com/o/oauth2/auth?redirect_uri=http://localhost:3000&client_id=218639380376-73spmg3ifncg0evje558kla6tb7jbqk4.apps.googleusercontent.com&response_type=code&scope=https://www.googleapis.com/auth/userinfo.profile+https://www.googleapis.com/auth/userinfo.email';
 
     
@@ -53,8 +54,6 @@ export function AuthProvider(props) {
             console.log('no token')
         }
     }, [])
-
-    
 
     return (
         <AuthContext.Provider value={{ signInUrl, user, signOut}}>

@@ -8,7 +8,7 @@ export function GoogleLogin() {
     const { signInUrl, user, signOut } = useContext(AuthContext);
 
     return (
-        <Link href={user ? '' : signInUrl}>
+        <Link href={user ? '/' : signInUrl}>
         <button className={styles.loginwithgooglebtn} onClick={user ? signOut : null} >
             {user ? "Sair" : "Entrar"}
         </button>
