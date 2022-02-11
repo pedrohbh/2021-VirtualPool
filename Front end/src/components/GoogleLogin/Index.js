@@ -5,13 +5,13 @@ import { AuthContext } from '../../contexts/auth';
 import styles from './styles.module.scss';
 
 export function GoogleLogin() {
-    const { signInUrl, user } = useContext(AuthContext);
+    const { signInUrl, user, signOut } = useContext(AuthContext);
 
     console.log(user);
 
     return (
-        <Link href={signInUrl}>
-        <button className={styles.loginwithgooglebtn} >
+        <Link href={user ? '' : signInUrl}>
+        <button className={styles.loginwithgooglebtn} onClick={user ? signOut : null} >
             {user ? "Sair" : "Entrar"}
         </button>
         </Link>

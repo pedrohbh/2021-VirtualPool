@@ -20,6 +20,11 @@ export function AuthProvider(props) {
         setUser(jogador);
     };
 
+    function signOut(){
+        setUser(null);
+        localStorage.removeItem('@virtualpool:token');
+    }
+
     useEffect(() => {
         const token = localStorage.getItem('@virtualpool:token');
 
@@ -46,7 +51,7 @@ export function AuthProvider(props) {
     }, []);
 
     return (
-        <AuthContext.Provider value={{ signInUrl, user}}>
+        <AuthContext.Provider value={{ signInUrl, user, signOut}}>
             {props.children}
         </AuthContext.Provider> 
     );
