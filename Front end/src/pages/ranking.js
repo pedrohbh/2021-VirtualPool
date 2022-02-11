@@ -29,7 +29,8 @@ export default function Home() {
                 <th className={styles.th}>Usuário</th>
                 <th className={styles.th}>Vitórias</th>
               </tr>
-              {ranking.map( (jogador, key) => {
+              {
+              ranking.map( (jogador, key) => {
                 return(
                   <tr key={key+1}>
                     <td className={styles.td}>{key+1}º</td>

@@ -22,15 +22,6 @@ export default function Home() {
       console.log(response.data);
     });*/
   }, [])
-
-  if (user)
-  {
-    let id = user.id;
-    let picture = user.picture;
-    let nome = user.nome;
-    let vitorias = user.vitorias;
-    let taxVitoria = user.vitorias > 0 ? user.vitorias/(user.vitorias+user.derrotas) : 0;
-  }
   
   return (
     <>
@@ -42,16 +33,16 @@ export default function Home() {
         <div className={styles.backgroudDegrade}>
           <div className={styles.caixaStats}>
             <div className={styles.perfil}>
-              <img src={picture} className={styles.imagePerfil}/><br/>
-              <span className={styles.textPerfil}>{nome}</span>
+              <img src={user?.picture} className={styles.imagePerfil}/><br/>
+              <span className={styles.textPerfil}>{user?.nome}</span>
             </div>
             <div className={styles.stats}>
               <span className={styles.textStats}>Vitórias</span>
-              <span className={styles.textPerfil}>{vitorias}</span>
+              <span className={styles.textPerfil}>{user?.vitorias}</span>
             </div>
             <div className={styles.stats}>
               <span className={styles.textStats}>V/D</span>
-              <span className={styles.textPerfil}>{taxVitoria}</span>
+              <span className={styles.textPerfil}>{user?.vitorias/(user?.vitorias+user?.derrotas)}</span>
             </div>
             <div className={styles.stats}>
               <span className={styles.textStats}>Posição</span>
@@ -76,7 +67,7 @@ export default function Home() {
 
                 return(
                   <tr>
-                  <td className={styles.td}>{resultado}</td>
+                  <td className={styles.td}>resultado</td>
                   <td className={styles.td}>josé</td>
                   <td className={styles.td}>{partida.data}</td>
                   <td className={styles.td}>{partida.duracao}</td>
