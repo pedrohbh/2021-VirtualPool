@@ -4,8 +4,10 @@ import Header from '../components/header';
 import styles from '../styles/Perfil.module.scss';
 
 export default function Home() {
-  const [info, setInfo] = useState('')
+  const [info, setInfo] = useState(null)
   const [partidas, setPartidas] = useState([])
+  const [resultado, setResultado] = useState('');
+  const [oponente, setOponente] = useState('');
 
   useEffect(() => {
     api.get('/perfil').then(response => {
@@ -16,12 +18,19 @@ export default function Home() {
     });
   })
 
+  var id = info.id;
+  var img = info.picture;
+  var name = info.nome;
+  var vitorias = info.vitorias;
+  var taxVitoria = vitorias/(vitorias+info.derrotas);
+
+  /*
   var img = "./images/blank-profile-picture-973460__480.png";
   var name = "Baianinho"
   var vitorias = 2;
   var taxVitoria = 0.7;
   var rank = 2;
-  var log = true;
+  var log = true;*/
 
   /*
   var partidas = [{
@@ -88,7 +97,7 @@ export default function Home() {
             </div>
             <div className={styles.stats}>
               <span className={styles.textStats}>Posição</span>
-              <span className={styles.textPerfil}>{rank}º</span>
+              <span className={styles.textPerfil}>CORRIGIRº</span>
             </div>
           </div>
           <div className={styles.caixaStats}>
@@ -102,9 +111,12 @@ export default function Home() {
                 <th className={styles.th}>Duração</th>
               </tr>
               {partidas.map(partida => {
+                if (partida.idPerdedor === id) setResultado('Derrota');
+                else if (partida.idVencedor === id) setResultado('Vitória');
+
                 return(
                   <tr>
-                  <td className={styles.td}>Vitória</td>
+                  <td className={styles.td}>{resultado}</td>
                   <td className={styles.td}>josé</td>
                   <td className={styles.td}>partida.data</td>
                   <td className={styles.td}>partida.duracao</td>

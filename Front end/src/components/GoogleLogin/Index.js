@@ -17,7 +17,7 @@ export function GoogleLogin() {
         localStorage.setItem('@virtualpool:token', token);
 
         console.log(jogador);
-    }
+    };
 
     useEffect(() =>{
         const url = window.location.href;
@@ -32,7 +32,7 @@ export function GoogleLogin() {
             signIn(code);
         }
        
-    }, [])
+    }, []);
 
     return (
         <Link href={signInUrl}>
