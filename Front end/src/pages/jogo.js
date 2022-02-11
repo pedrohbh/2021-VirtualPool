@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Header from '../components/header'
+import Header from '../components/Header/Index'
 import styles from '../styles/Jogo.module.scss'
 
 export default function Home() {

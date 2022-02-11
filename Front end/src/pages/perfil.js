@@ -22,7 +22,7 @@ export default function Home() {
       console.log(response.data);
     });*/
   }, [])
-  
+
   return (
     <>
       <Head>
@@ -41,11 +41,11 @@ export default function Home() {
               <span className={styles.textPerfil}>{user?.vitorias}</span>
             </div>
             <div className={styles.stats}>
-              <span className={styles.textStats}>V/D</span>
-              <span className={styles.textPerfil}>{user?.vitorias/(user?.vitorias+user?.derrotas)}</span>
+              <span className={styles.textStats}>% Vitórias</span>
+              <span className={styles.textPerfil}>{user?.vitorias+user?.derrotas > 0 ? user?.vitorias/(user?.vitorias+user?.derrotas) : 0}</span>
             </div>
             <div className={styles.stats}>
-              <span className={styles.textStats}>Posição</span>
+              <span className={styles.textStats}>Rank</span>
               <span className={styles.textPerfil}>CORRIGIRº</span>
             </div>
           </div>

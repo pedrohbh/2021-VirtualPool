@@ -1,6 +1,5 @@
 import { AuthenticateUserService } from "../services/AuthenticateUserService.js";
 
-
 class AuthenticateUserController {
     async handle(request, response) {
         const { code } = request.body;
