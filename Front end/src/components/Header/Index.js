@@ -4,6 +4,7 @@ import { useRouter } from "next/dist/client/router";
 import { useState } from 'react';
 
 import styles from './styles.module.scss';
+import { GoogleLogin } from '../GoogleLogin/Index';
 
 export default function Header() {
     const { asPath } = useRouter();
@@ -23,12 +24,12 @@ export default function Header() {
                     <li><div className={styles.divisor} /></li>
                     <li className={(asPath === '/jogar' || asPath === '/pegarOp') ? styles.activeLink : null}><Link href="/jogar" onClick={() => window.location.reload()}>Jogar</Link></li>
                     <li><div className={styles.divisor} /></li>
+                    
                     {(selected === 1) && <li className={(asPath === '/perfil' || asPath === '/entrar') ? styles.activeLink : null}><Link href="/perfil" onClick={() => window.location.reload()}>Perfil</Link></li>}
                     {(selected === 0) && <li className={(asPath === '/perfil' || asPath === '/entrar') ? styles.activeLink : null}><Link href="/entrar" onClick={() => window.location.reload()}>Perfil</Link></li>}
                 </ul>
                 <div className={styles.gambiarra}>
-                    {(selected === 1) && <Link href="/" className={styles.session} onClick={()=>setSelected(0)} >Sair</Link>}
-                    {(selected === 0) && <Link href="/entrar" className={styles.session}>Entrar / Registrar</Link>}
+                    <GoogleLogin/>
                 </div>
             </div>
         </div>

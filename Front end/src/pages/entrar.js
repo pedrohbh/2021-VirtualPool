@@ -2,15 +2,14 @@
 /* eslint-disable @next/next/no-img-element */
 import Head from 'next/head'
 import { useState } from 'react';
+import Link from 'next/link';
 import Header from '../components/header'
 import styles from '../styles/Entrar.module.scss'
 import { useRouter } from "next/dist/client/router";
 
 export default function Home() {
+  const signInUrl = 'https://accounts.google.com/o/oauth2/auth?redirect_uri=http://localhost:3000&client_id=218639380376-73spmg3ifncg0evje558kla6tb7jbqk4.apps.googleusercontent.com&response_type=code&scope=https://www.googleapis.com/auth/userinfo.profile';
 
-    const { asPath } = useRouter();
-
-    const [selected, setSelected] = useState(0);
 
   return (
     <>
@@ -28,8 +27,8 @@ export default function Home() {
                     <div  id={styles.login}>
                         <form method="post" action="">
                         <h1>Login</h1> 
-                            <p className={styles.link}> 
-                                <input type="submit" className={styles.icon} value="Logar com Google" onClick={()=>window.location.href = "/google"}/> 
+                            <p className={styles.link} href={signInUrl}> 
+                                <input type="submit" className={styles.icon} value="Logar com Google"/> 
                             </p>
                         </form>
                     </div>

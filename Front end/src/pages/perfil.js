@@ -1,9 +1,21 @@
-import Head from 'next/head'
-import Header from '../components/header'
-import styles from '../styles/Perfil.module.scss'
-
+import { useEffect, useState } from 'react';
+import Head from 'next/head';
+import Header from '../components/header';
+import styles from '../styles/Perfil.module.scss';
 
 export default function Home() {
+  const [info, setInfo] = useState('')
+  const [partidas, setPartidas] = useState([])
+
+  useEffect(() => {
+    api.get('/perfil').then(response => {
+      setInfo(response.data);
+    });
+    api.get('/matchHist').then(response => {
+      setPartidas(response.data);
+    });
+  })
+
   var img = "./images/blank-profile-picture-973460__480.png";
   var name = "Baianinho"
   var vitorias = 2;
@@ -11,6 +23,7 @@ export default function Home() {
   var rank = 2;
   var log = true;
 
+  /*
   var partidas = [{
     resultado: "Vitória",
     data: "19/12/2021",
@@ -31,8 +44,9 @@ export default function Home() {
     data: "19/12/2021",
     duracao: "14 minutos",
     oponente: "josé"
-  }]
+  }]*/
   
+  /*
   const listItems = partidas.map((item) =>{
     if (item.resultado == "Vitória"){
       return (<div className={styles.caixaVitoria}>
@@ -49,7 +63,7 @@ export default function Home() {
         <span className={styles.textCaixa}>{item.duracao}</span>
       </div>)
     }
-  });
+  });*/
   
   return (
     <>
@@ -87,18 +101,16 @@ export default function Home() {
                 <th className={styles.th}>Data</th>
                 <th className={styles.th}>Duração</th>
               </tr>
-              <tr>
-                <td className={styles.td}>Vitória</td>
-                <td className={styles.td}>josé</td>
-                <td className={styles.td}>02/02/2022</td>
-                <td className={styles.td}>14 minutos</td>
-              </tr>
-              <tr>
-                <td className={styles.td}>Vitória</td>
-                <td className={styles.td}>josé</td>
-                <td className={styles.td}>02/02/2022</td>
-                <td className={styles.td}>14 minutos</td>
-              </tr>
+              {partidas.map(partida => {
+                return(
+                  <tr>
+                  <td className={styles.td}>Vitória</td>
+                  <td className={styles.td}>josé</td>
+                  <td className={styles.td}>partida.data</td>
+                  <td className={styles.td}>partida.duracao</td>
+                  </tr>
+                )}
+                )}
             </table>
           </div>
           </div>

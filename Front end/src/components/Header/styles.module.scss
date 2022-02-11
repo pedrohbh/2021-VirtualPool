@@ -57,10 +57,4 @@
 
     display:flex;
     justify-content: flex-end;
-
-    a, p {    
-        &:hover {
-            color: var(--yellow);
-        }
-    }
 }

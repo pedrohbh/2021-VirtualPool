@@ -8,7 +8,10 @@ import {Server} from "socket.io";
 
 const app = express();
 app.use(express.json());
-app.use(router);
+
+app.use(cors({
+    origin: "*"
+}))
 
 const serverHttp = http.createServer(app);
 
@@ -44,5 +47,6 @@ app.get('/signin/callback', (req, res) => {
     return res.json(code);
 })
 
+app.use(router);
 //serverHttp.listen(4000, () => console.log("Virtual pool >>"));
 export {serverHttp, io};
