@@ -75,8 +75,8 @@ export default function Home() {
                   partidas.map(partida => {
                     return (
                       <tr>
-                        <td className={styles.td}>{user.id === partida.idVencedor ? 'Vitoria' : 'Derrota'}</td>
-                        <td className={styles.td}>{user.id === partida.idVencedor ? partida.nomePerdedor : partida.nomeVencedor}</td>
+                        <td className={styles.td}>{user?.id === partida.idVencedor ? 'Vitoria' : 'Derrota'}</td>
+                        <td className={styles.td}>{user?.id === partida.idVencedor ? partida.nomePerdedor : partida.nomeVencedor}</td>
                         <td className={styles.td}>{format(new Date(partida.data), 'dd MMM yyyy', {
                   locale: ptBR,
                 })}</td>

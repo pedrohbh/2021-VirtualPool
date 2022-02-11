@@ -21,7 +21,7 @@ export function AuthProvider(props) {
         localStorage.setItem('@virtualpool:token', token);
 
         setUser(jogador);
-        router.push('/');
+        window.location.replace('/');
     };
 
     useEffect(() =>{

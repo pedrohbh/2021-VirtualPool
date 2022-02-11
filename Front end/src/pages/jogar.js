@@ -1,16 +1,25 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import Head from 'next/head'
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import Header from '../components/Header/Index'
 import styles from '../styles/Jogar.module.scss'
 import { api } from "../services/api";
 import { AuthContext } from '../contexts/auth';
+import { useRouter } from 'next/router';
 
 export default function Home() {
   const [img2, setImg2] = useState("./images/int.png");
   const [opponent, setOpponent] = useState('');
   const { user, signInUrl } = useContext(AuthContext);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!user) {
+      router.push("/entrar");
+    }
+    
+  }, [])
 
   const sleep = (milliseconds) => {
     return new Promise(resolve => setTimeout(resolve, milliseconds))
@@ -21,11 +30,14 @@ export default function Home() {
     api.defaults.headers.common.authorization = `Bearer ${token}`
     const r = await api.get('/oponent', {});
     const { op } = r.data;
-    while (op.id == user.id) {
-      const r = await api.get('/oponent', {});
-      const { op } = r.data;
+    while (op.id === user.id) {
+      setImg2("./images/int.png");
+      setOpponent('');
+      alert("Adversário não encontrado");
+      return;
     }
 
+    alert("partida concluida");
     setImg2(op.picture);
     setOpponent(op.nome);
 
@@ -40,7 +52,7 @@ export default function Home() {
     const { par } = response.data;
     console.log(par);
     console.log(op);
-
+    
   };
   return (
     <>
@@ -51,8 +63,8 @@ export default function Home() {
         <Header path="perfil" />
         <div className={styles.backgroudDegrade}>
           <div className={styles.perfil1}>
-            <img src={user.picture} className={styles.imagePerfil} /><br />
-            <span className={styles.textPerfil}>{user.nome}</span>
+            <img src={user?.picture} className={styles.imagePerfil} /><br />
+            <span className={styles.textPerfil}>{user?.nome}</span>
           </div>
           <img src="/images/vs.png" className={styles.vs} />
           <div className={styles.perfil2}>
