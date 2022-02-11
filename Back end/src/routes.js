@@ -14,7 +14,7 @@ router.post("/partida", ensureAuthenticated, new CreatePartidaController().handl
 
 router.post("/ranking", new RetrieveRankingController().handle);
 
-router.post("/perfil", ensureAuthenticated, new RetrieveUserByIdController().handle);
+router.get("/perfil", ensureAuthenticated, new RetrieveUserByIdController().handle);
 
 router.post("/matchHist", ensureAuthenticated, new RetrievePartidasByIdController().handle);
 

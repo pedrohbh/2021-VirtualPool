@@ -1,22 +1,31 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { useRouter } from 'next/router'
 import Head from 'next/head';
 import Header from '../components/header';
 import styles from '../styles/Perfil.module.scss';
+import { AuthContext } from '../contexts/auth';
 
 export default function Home() {
+  const { user } = useContext(AuthContext);
+  const router = useRouter();
+
   const [info, setInfo] = useState(null)
   const [partidas, setPartidas] = useState([])
   const [resultado, setResultado] = useState('');
   const [oponente, setOponente] = useState('');
 
   useEffect(() => {
+    if(!user){
+      router.push('/index');
+    }
+    
     api.get('/perfil').then(response => {
       setInfo(response.data);
     });
     api.get('/matchHist').then(response => {
       setPartidas(response.data);
     });
-  })
+  }, [])
 
   var id = info.id;
   var img = info.picture;

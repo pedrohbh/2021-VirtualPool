@@ -1,38 +1,8 @@
 import Head from 'next/head'
 import Header from '../components/header'
 import styles from '../styles/Home.module.scss'
-import { api } from '../services/api';
-import { useEffect } from 'react';
 
 export default function Home() {
-
-  async function signIn(googleCode) {
-    const response = await api.post('/authenticate', {
-        code: googleCode
-    })
-
-    const { token, jogador } = response.data;
-
-    localStorage.setItem('@virtualpool:token', token);
-
-    console.log(jogador);
-};
-
-useEffect(() =>{
-    const url = window.location.href;
-    const hasGoogleCode = url.includes('?code=');
-    
-    if(hasGoogleCode){
-        const [urlWithNoCode, afterCode] = url.split('?code=');
-        const [code,] = afterCode.split('&');
-
-        window.history.pushState({}, '', urlWithNoCode)
-        console.log(code);
-        signIn(code);
-    }
-   
-}, []);
-
   return (
     <>
       <Head>
