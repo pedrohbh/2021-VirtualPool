@@ -13,8 +13,13 @@ export default function Home() {
   const router = useRouter();
   const [partidas, setPartidas] = useState([]);
   const [rank, setRank] = useState('');
+  const [info, setInfo] = useState(null);
 
   function setProfile(){
+    api.get('/perfil').then(response => {
+      setInfo(response.data.user);
+    });
+
     api.get('/matchHist').then(response => {
       setPartidas(response.data.partidas);
     });
@@ -44,15 +49,15 @@ export default function Home() {
           <div className={styles.caixaStats}>
             <div className={styles.perfil}>
               <img src={user?.picture} className={styles.imagePerfil} /><br />
-              <span className={styles.textPerfil}>{user?.nome}</span>
+              <span className={styles.textPerfil}>{info?.nome}</span>
             </div>
             <div className={styles.stats}>
               <span className={styles.textStats}>Vitórias</span>
-              <span className={styles.textPerfil}>{user?.vitorias}</span>
+              <span className={styles.textPerfil}>{info?.vitorias}</span>
             </div>
             <div className={styles.stats}>
               <span className={styles.textStats}>% Vitórias</span>
-              <span className={styles.textPerfil}>{user?.vitorias + user?.derrotas > 0 ? Math.floor(100*user?.vitorias / (user?.vitorias + user?.derrotas)) : 0}</span>
+              <span className={styles.textPerfil}>{info?.vitorias + info?.derrotas > 0 ? Math.floor(100*info?.vitorias / (info?.vitorias + info?.derrotas)) : 0}</span>
             </div>
             <div className={styles.stats}>
               <span className={styles.textStats}>Rank</span>
