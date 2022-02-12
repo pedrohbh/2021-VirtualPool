@@ -1,5 +1,4 @@
 import { CreatePartidaService } from "../services/CreatePartidaService.js";
-import { GetUserService } from "../services/GetUserService.js";
 
 
 
