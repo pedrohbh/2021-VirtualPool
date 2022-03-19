@@ -19,6 +19,7 @@
     "express": "^4.17.1",
     "googleapis": "^89.0.0",
     "jsonwebtoken": "^8.5.1",
-    "socket.io": "^4.4.1"
+    "socket.io": "^4.4.1",
+    "sparqljs": "^3.5.1"
   }
 }

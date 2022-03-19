@@ -23,7 +23,8 @@ export default function Header() {
                     <li className={(asPath === '/jogar' || asPath === '/pegarOp') ? styles.activeLink : null}><Link href="/jogar" onClick={() => window.location.reload()}>Jogar</Link></li>
                     <li><div className={styles.divisor} /></li>
                     <li className={(asPath === '/perfil') ? styles.activeLink : null}><Link href="/perfil" onClick={() => window.location.reload()}>Perfil</Link></li>
-                    
+                    <li><div className={styles.divisor} /></li>
+                    <li className={(asPath === '/sinuca') ? styles.activeLink : null}><Link href="/sinuca" onClick={() => window.location.reload()}>Verdadeira Sinuca</Link></li>
                 </ul>
                 <div className={styles.gambiarra}>
                     <GoogleLogin/>
