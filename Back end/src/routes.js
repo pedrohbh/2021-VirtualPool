@@ -6,6 +6,9 @@ import { RetrieveRankingController } from "./controllers/RetrieveRankingControll
 import { RetrievePlayerRankController } from "./controllers/RetrievePlayerRankController.js";
 import { RetrieveUserByIdController } from "./controllers/RetrieveUserByIdController.js";
 import { RetrievePartidasByIdController } from "./controllers/RetrievePartidasByIdController.js";
+import { RetrieveJogadorRealByIdController } from "./controllers/RetrieveJogadorRealByIdController.js";
+import { RetrieveJogadoresRealController } from "./controllers/RetrieveJogadoresRealController.js";
+import { RetrieveCampeoesRealController } from "./controllers/RetrieveCampeoesRealController.js";
 import { GetOponentController } from "./controllers/GetOponentController.js";
 
 const router = Router();
@@ -23,5 +26,11 @@ router.get("/matchHist", ensureAuthenticated, new RetrievePartidasByIdController
 router.get("/oponent", new GetOponentController().handle);
 
 router.get("/playerRank", ensureAuthenticated, new RetrievePlayerRankController().handle);
+
+router.get("/jogadorreal", new RetrieveJogadorRealByIdController().handle);
+
+router.get("/jogadoresreal", new RetrieveJogadoresRealController().handle);
+
+router.get("/campeoesreal", new RetrieveCampeoesRealController().handle);
 
 export { router }

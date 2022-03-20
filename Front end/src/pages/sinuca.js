@@ -10,19 +10,13 @@ export default function Home() {
   const [ranking, setRanking] = useState([])
   const [selected, setSelected] = useState("");
   const [lista, setLista] = useState();
+  const [listaC, setListaC] = useState();
+  const [listaJ, setListaJ] = useState();
   const [jogador, setJogador] = useState(null);
   const [temFoto, setTemFoto] = useState(false);
+  const [descricao, setDescricao] = useState("Descrição");
+  const [imagem, setImagem] = useState("Imagem");
   const [s, setS] = useState(false);
-  const [dbinfo, setDbinfo] = useState([
-    {
-      value: "jog1",
-      label: "jog1",
-    },
-    {
-      value: "jog2",
-      label: "jog2",
-    }
-  ]);
 
   const picker = [
     {
@@ -34,6 +28,27 @@ export default function Home() {
       label: "Jogadores",
     }
   ]
+
+  useEffect(() => {
+    api.get('/jogadoresreal').then(response => {
+      //setListaJ(response.data);
+    });
+  }, [])
+
+    /*
+    api.get('/campeoesreal').then(response => {
+      console.log("camp: ", response);
+      setListaC(response.data);
+    });
+  }, [])*/
+
+  /*useEffect(() => {
+    api.get('/jogadorreal').then(response => {
+      setImagem(response.data.imagem);
+      setDescricao(response.data.descricao);
+    });
+  }, [jogador])
+  */
 
   const colourStylesCat = {
     control: styles => ({ ...styles, backgroundColor: 'white' }),
@@ -57,17 +72,11 @@ export default function Home() {
     },
   };
 
-  useEffect(() => {
-    api.get('/ranking').then(response => {
-      setRanking(response.data.ranking);
-    });
-  }, [])
-
   const Categorias = () => (
     <Select styles={colourStylesCat} 
             width='200px'
             placeholder='Selecione a categoria'
-            onChange={(data)=>{setS(true), setSelected(data.value), setLista(dbinfo);}}
+            onChange={(data)=>{setS(true), setSelected(data.value), data.value == "campeoes" ? setLista(listaC) : setLista(listaJ);}}
             options={picker} />
   )
 
@@ -92,12 +101,10 @@ export default function Home() {
             {jogador !== null && 
             <div>
               <div>
-                {temFoto
-                  ?<img src={jogador.image} className={styles.imagePerfil}/>
-                  :<img src={"https://images.tcdn.com.br/img/img_prod/683560/taco_de_sinuca_inteirico_baianinho_de_maua_oficial_maxxi_tacos_747_2_748871334406eb6f1d552f06aea0c53a_20210810085426.jpg"} className={styles.imagePerfil}/>}
+                {temFoto ? <img src={jogador.image} className={styles.imagePerfil}/> : <img src={"https://images.tcdn.com.br/img/img_prod/683560/taco_de_sinuca_inteirico_baianinho_de_maua_oficial_maxxi_tacos_747_2_748871334406eb6f1d552f06aea0c53a_20210810085426.jpg"} className={styles.imagePerfil}/>}
               </div>
               <div>
-
+                {descricao}
               </div>
             </div>
             }
