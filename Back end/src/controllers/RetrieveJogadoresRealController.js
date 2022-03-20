@@ -5,7 +5,6 @@ class RetrieveJogadoresRealController{
         const service = new RetrieveJogadoresRealService();
 
         const result = await service.execute();
-        console.log(result)
         return response.json(result);
     }
 }

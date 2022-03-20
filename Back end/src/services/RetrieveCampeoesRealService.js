@@ -1,7 +1,9 @@
 import sparqlClient from "../sparql/index.js";
+import ParsingClient from 'sparql-http-client/ParsingClient.js';
 
 class RetrieveCampeoesRealService{
     async execute(){
+        const endpointUrl = 'https://dbpedia.org/sparql';
         const query = `
         PREFIX dbo: <http://dbpedia.org/ontology/>
         PREFIX dbr: <http://dbpedia.org/resource/>
@@ -14,25 +16,18 @@ class RetrieveCampeoesRealService{
         }
         ORDER BY ?nome`
 
-        const stream = await sparqlClient.query.select(query)
+        const client = new ParsingClient({ endpointUrl })
+        const bindings = await client.query.select(query)
+
         let response = []
-        
-        /*
-        stream.on('data', row => {
-        Object.entries(row).forEach(([key, value]) => {
-            console.log(`${key}: ${value.value} (${value.termType})`)
-            response.push(value.value)
-        })
-        })
 
-        console.log(response);*/
+        bindings.forEach(row =>{ 
+            Object.entries(row).forEach(([key, value]) => {
+                response.push({value: "\"" +value.value + "\"@" + value.language,label: value.value})
+            })}
+        )
 
-        
-        stream.on('error', err => {
-        console.error(err)
-        })
-
-        return {stream};
+        return {response}
     }
 }
 

@@ -7,16 +7,13 @@ import Select from 'react-select'
 
 export default function Home() {
 
-  const [ranking, setRanking] = useState([])
-  const [selected, setSelected] = useState("");
-  const [lista, setLista] = useState();
   const [listaC, setListaC] = useState();
   const [listaJ, setListaJ] = useState();
   const [jogador, setJogador] = useState(null);
-  const [temFoto, setTemFoto] = useState(false);
   const [descricao, setDescricao] = useState("Descrição");
   const [imagem, setImagem] = useState("Imagem");
-  const [s, setS] = useState(false);
+  const [c, setC] = useState(false);
+  const [j, setJ] = useState(false);
 
   const picker = [
     {
@@ -31,24 +28,25 @@ export default function Home() {
 
   useEffect(() => {
     api.get('/jogadoresreal').then(response => {
-      //setListaJ(response.data);
+      setListaJ(response.data.response);
+    });
+
+  
+    api.get('/campeoesreal').then(response => {
+      setListaC(response.data.response);
     });
   }, [])
 
-    /*
-    api.get('/campeoesreal').then(response => {
-      console.log("camp: ", response);
-      setListaC(response.data);
-    });
-  }, [])*/
-
-  /*useEffect(() => {
-    api.get('/jogadorreal').then(response => {
+  useEffect(() => {
+    jogador != null 
+    ? api.get('/jogadorreal/'+jogador).then(response => {
+      console.log(response.data.imagem)
       setImagem(response.data.imagem);
       setDescricao(response.data.descricao);
-    });
+    })
+    : null
   }, [jogador])
-  */
+
 
   const colourStylesCat = {
     control: styles => ({ ...styles, backgroundColor: 'white' }),
@@ -72,20 +70,33 @@ export default function Home() {
     },
   };
 
+  const setAux = (c, j) => {
+    setC(c);
+    setJ(j);
+  }
+
   const Categorias = () => (
     <Select styles={colourStylesCat} 
             width='200px'
             placeholder='Selecione a categoria'
-            onChange={(data)=>{setS(true), setSelected(data.value), data.value == "campeoes" ? setLista(listaC) : setLista(listaJ);}}
+            onChange={(data)=>{data.value == "campeoes" ? setAux(true, false) : setAux(false, true)}}
             options={picker} />
   )
 
-  const Busca = () => (
+  const BuscaC = () => (
     <Select styles={colourStylesJog} 
             width='200px'
             placeholder='Selecione o que buscar'
-            onChange={(data)=>{setJogador(data);}}
-            options={lista} />
+            onChange={(data)=>{setJogador(data.value)}}
+            options={listaC} />
+  )
+
+  const BuscaJ = () => (
+    <Select styles={colourStylesJog} 
+            width='200px'
+            placeholder='Selecione o que buscar'
+            onChange={(data)=>{setJogador(data.value)}}
+            options={listaJ} />
   )
 
   return (
@@ -97,11 +108,12 @@ export default function Home() {
         <Header path="sinuca"/>
         <div className={styles.backgroudDegrade}>
             {Categorias()}
-            {s && Busca()}
+            {c && BuscaC()}
+            {j && BuscaJ()}
             {jogador !== null && 
             <div>
               <div>
-                {temFoto ? <img src={jogador.image} className={styles.imagePerfil}/> : <img src={"https://images.tcdn.com.br/img/img_prod/683560/taco_de_sinuca_inteirico_baianinho_de_maua_oficial_maxxi_tacos_747_2_748871334406eb6f1d552f06aea0c53a_20210810085426.jpg"} className={styles.imagePerfil}/>}
+                <img src={imagem} className={styles.imagePerfil}/> 
               </div>
               <div>
                 {descricao}

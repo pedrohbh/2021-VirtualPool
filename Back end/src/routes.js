@@ -27,7 +27,7 @@ router.get("/oponent", new GetOponentController().handle);
 
 router.get("/playerRank", ensureAuthenticated, new RetrievePlayerRankController().handle);
 
-router.get("/jogadorreal", new RetrieveJogadorRealByIdController().handle);
+router.get("/jogadorreal/:nome", new RetrieveJogadorRealByIdController().handle);
 
 router.get("/jogadoresreal", new RetrieveJogadoresRealController().handle);
 

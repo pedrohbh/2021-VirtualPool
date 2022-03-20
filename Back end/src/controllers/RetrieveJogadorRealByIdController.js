@@ -2,11 +2,11 @@ import { RetrieveJogadorRealByIdService } from "../services/RetrieveJogadorRealB
 
 class RetrieveJogadorRealByIdController{
     async handle(request, response){
-        const {id} = request;
+        const {nome} = request.params;
 
         const service = new RetrieveJogadorRealByIdService();
 
-        const result = await service.execute(id);
+        const result = await service.execute(nome);
         
         return response.json(result);
     }
