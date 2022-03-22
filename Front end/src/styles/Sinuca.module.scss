@@ -1,0 +1,45 @@
+.backgroudDegrade {
+  background: linear-gradient(
+    to top,
+    rgba(32, 32, 32, 0) 0%,
+    rgba(43, 43, 43, 0.5) 100%
+  );
+  border-radius: 70px;
+  margin-left: 20%;
+  margin-top: 1%;
+  width: 60%;
+  height: 80vh;
+}
+
+.imagePerfil {
+  height: 35vh;
+  border: 2px solid #f2b705;
+}
+
+.divImagem {
+  width: 100%;
+  padding: 2%;
+  align-content: center;
+  justify-content: center;
+}
+
+.picker {
+  padding-top: 2%;
+  width: 90%;
+  margin-left: 5%;
+}
+
+.caixaStats {
+  background-image: linear-gradient(
+    to left,
+    transparent 0%,
+    rgba(0, 0, 0, 0.2) 0%
+  );
+  border-radius: 20px;
+  vertical-align: top;
+  display: inline-block;
+  text-align: left;
+  width: 90%;
+  margin-top: 2%;
+  margin-left: 5%;
+}

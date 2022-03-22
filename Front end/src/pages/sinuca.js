@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Header from '../components/Header/Index.js'
-import styles from '../styles/Perfil.module.scss';
+import styles from '../styles/Sinuca.module.scss';
 import { useEffect, useState } from 'react';
 import { api } from '../services/api';
 import Select from 'react-select'
@@ -55,6 +55,12 @@ export default function Home() {
         backgroundColor: !isSelected ? 'White' : '#CFCFCF',
         color: 'Black',
         cursor: isSelected ? 'not-allowed' : 'default',
+        padding: "1%",
+        fontWeight: isSelected ? "bold" : "normal",
+        "&:hover": {
+          border: "1px solid grey",
+          boxShadow: `0px 0px 6px grey`
+        }
       };
     },
   };
@@ -66,6 +72,12 @@ export default function Home() {
         backgroundColor: !isSelected ? 'White' : '#CFCFCF',
         color: 'Black',
         cursor: isSelected ? 'not-allowed' : 'default',
+        padding: "1%",
+        fontWeight: isSelected ? "bold" : "normal",
+        "&:hover": {
+          border: "1px solid grey",
+          boxShadow: `0px 0px 6px grey`
+        }
       };
     },
   };
@@ -107,12 +119,16 @@ export default function Home() {
       <div className={styles.background}>
         <Header path="sinuca"/>
         <div className={styles.backgroudDegrade}>
-            {Categorias()}
-            {c && BuscaC()}
-            {j && BuscaJ()}
+            <div className={styles.picker}>
+              {Categorias()}
+            </div>
+            <div className={styles.picker}>
+              {j && BuscaJ()}
+              {c && BuscaC()}
+            </div>
             {jogador !== null && 
-            <div>
-              <div>
+            <div className={styles.caixaStats}>
+              <div className={styles.divImagem}>
                 <img src={imagem} className={styles.imagePerfil}/> 
               </div>
               <div>
