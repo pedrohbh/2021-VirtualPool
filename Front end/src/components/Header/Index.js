@@ -24,7 +24,7 @@ export default function Header() {
                     <li><div className={styles.divisor} /></li>
                     <li className={(asPath === '/perfil') ? styles.activeLink : null}><Link href="/perfil" onClick={() => window.location.reload()}>Perfil</Link></li>
                     <li><div className={styles.divisor} /></li>
-                    <li className={(asPath === '/sinuca') ? styles.activeLink : null}><Link href="/sinuca" onClick={() => window.location.reload()}>Verdadeira Sinuca</Link></li>
+                    <li className={(asPath === '/sinuca') ? styles.activeLink : null}><Link href="/sinuca" onClick={() => window.location.reload()}>Sinuca Real</Link></li>
                 </ul>
                 <div className={styles.gambiarra}>
                     <GoogleLogin/>
