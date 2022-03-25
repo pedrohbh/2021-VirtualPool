@@ -103,3 +103,44 @@
 .th, .td {
     text-align: center;
 }
+
+.secRdf {
+    overflow-y: scroll;
+    white-space: pre-wrap;
+    height: 50vh;
+}
+
+.priRdf {
+    overflow-y: scroll;
+    white-space: pre-wrap;
+    height: 20vh;
+    margin-bottom: 12px;
+}
+
+.priRdf::-webkit-scrollbar {
+    display: none;
+}
+
+.secRdf::-webkit-scrollbar {
+    display: none;
+}
+
+.backgroudDegradeRdf{
+    background: linear-gradient(to top, rgba(32, 32, 32, 0) 0%, rgba(43, 43, 43, 0.5) 100%);
+    border-radius: 70px;
+    margin-left: 20%;
+    margin-top: 1%;
+    width: 70vw;
+    height: 85vh;
+}
+
+.caixaRdf{
+    background-image: linear-gradient(to left, transparent 0%, rgba(0, 0, 0, 0.2) 0%);
+    border-radius: 20px;
+    vertical-align: top;
+    display: inline-block;
+    text-align: left;
+    width: 90%;
+    margin-top: 2%;
+    margin-left: 5%;
+}
