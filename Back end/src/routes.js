@@ -10,7 +10,8 @@ import { RetrieveJogadorRealByIdController } from "./controllers/RetrieveJogador
 import { RetrieveJogadoresRealController } from "./controllers/RetrieveJogadoresRealController.js";
 import { RetrieveCampeoesRealController } from "./controllers/RetrieveCampeoesRealController.js";
 import { GetOponentController } from "./controllers/GetOponentController.js";
-
+import { RDFAllController } from "./controllers/RDFAllController.js";
+import { RDFNameController } from "./controllers/RDFNameController.js";
 const router = Router();
 
 router.post("/authenticate", new AuthenticateUserController().handle);
@@ -32,5 +33,9 @@ router.get("/jogadorreal/:nome", new RetrieveJogadorRealByIdController().handle)
 router.get("/jogadoresreal", new RetrieveJogadoresRealController().handle);
 
 router.get("/campeoesreal", new RetrieveCampeoesRealController().handle);
+
+router.get("/rdf", new RDFAllController().handle);
+
+router.get("/rdf/:nome", new RDFNameController().handle);
 
 export { router }
