@@ -17,10 +17,10 @@ export default function Home() {
   const [rdf, setRDF] = useState('');
   const [rdfAll, setRDFAll] = useState('');
 
-  function setProfile(){
+  function setProfile() {
     api.get('/perfil').then(response => {
       setInfo(response.data.user);
-      api.get('/rdf/'+response.data.user.nome).then(response => {
+      api.get('/rdf/' + response.data.user.nome).then(response => {
         setRDF(response.data);
       });
     });
@@ -34,8 +34,8 @@ export default function Home() {
     });
 
     api.get('/rdf').then(response => {
-        setRDFAll(response.data);
-      });
+      setRDFAll(response.data);
+    });
   }
 
   useEffect(() => {
@@ -44,7 +44,7 @@ export default function Home() {
     } else {
       setProfile();
     }
-    
+
   }, [])
 
   return (
@@ -56,8 +56,10 @@ export default function Home() {
         <Header path="rdf" />
         <div className={styles.backgroudDegrade}>
           <div className={styles.caixaStats}>
-                <div style={{minHeight: "fit-content", marginBottom: 50}}>{rdf}</div>
-                <div style={{minHeight: "fit-content"}}>{rdfAll}</div>
+            <h2 style={{ textAlign: 'center' }}>Jogador Logado por Nome:</h2>
+            <div className={styles.priRdf}>{rdf}</div>
+            <h2 style={{ textAlign: 'center' }}>Jogadores Cadastrados:</h2>
+            <div className={styles.secRdf}>{rdfAll}</div>
           </div>
         </div>
       </div>
