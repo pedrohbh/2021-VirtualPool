@@ -36,6 +36,9 @@
           <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/img"/>
         </ownedAttribute>
         <ownedAttribute xsi:type="frameweb:NavigationAggregationTarget" type="//@compose.1/components%2FHeader%2F/Header" association="//@compose.1/pages%2F/@packagedElement.1"/>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="Head">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
       </packagedElement>
       <packagedElement xsi:type="frameweb:NavigationAggregationAssociation" memberEnd="//@compose.1/pages%2F/@packagedElement.1/@ownedEnd.0 //@compose.1/pages%2F/jogar/@ownedAttribute.5">
         <ownedEnd xsi:type="frameweb:NavigationAggregationSource" type="//@compose.1/pages%2F/jogar" association="//@compose.1/pages%2F/@packagedElement.1"/>
@@ -45,6 +48,9 @@
         <ownedAttribute xsi:type="frameweb:NavigationAggregationTarget" type="//@compose.1/components%2FHeader%2F/Header" association="//@compose.1/pages%2F/@packagedElement.3"/>
         <ownedAttribute xsi:type="frameweb:UIComponentField" name="signInUrl">
           <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/a"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="Head">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xsi:type="frameweb:NavigationAggregationAssociation" memberEnd="//@compose.1/pages%2F/@packagedElement.3/@ownedEnd.0 //@compose.1/pages%2F/entrar/@ownedAttribute.0">
@@ -94,10 +100,23 @@
     <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/components%2FHeader%2F/Header" supplier="//@compose.1/components%2FHeader/Header"/>
     <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/pages%2F/entrar" supplier="//@compose.1/pages/entrar"/>
     <packagedElement xsi:type="frameweb:ViewPackage" name="pages/">
-      <packagedElement xsi:type="frameweb:Partial" name="index"/>
+      <packagedElement xsi:type="frameweb:Partial" name="index">
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="Head">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:NavigationAggregationTarget" type="//@compose.1/components%2FHeader%2F/Header" association="//@compose.1/pages%2F.1/@packagedElement.1"/>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="/images/vpoll">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/img"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:NavigationAggregationAssociation" memberEnd="//@compose.1/pages%2F.1/@packagedElement.1/@ownedEnd.0 //@compose.1/pages%2F.1/index/@ownedAttribute.1">
+        <ownedEnd xsi:type="frameweb:NavigationAggregationSource" type="//@compose.1/pages%2F.1/index" association="//@compose.1/pages%2F.1/@packagedElement.1"/>
+        <spaAttributes attribute="//@compose.1/components%2FHeader%2F/Header/path"/>
+      </packagedElement>
     </packagedElement>
     <packagedElement xsi:type="frameweb:ControllerPackage" name="pages">
       <packagedElement xsi:type="frameweb:FrontControllerClass" name="index"/>
     </packagedElement>
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/pages%2F.1/index" supplier="//@compose.1/pages.1/index"/>
   </compose>
 </frameweb:FramewebProject>
