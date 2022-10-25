@@ -41,6 +41,12 @@
         <ownedEnd xsi:type="frameweb:NavigationAggregationSource" type="//@compose.1/pages%2F/jogar" association="//@compose.1/pages%2F/@packagedElement.1"/>
         <spaAttributes attribute="//@compose.1/components%2FHeader%2F/Header/path"/>
       </packagedElement>
+      <packagedElement xsi:type="frameweb:Partial" name="entrar">
+        <ownedAttribute xsi:type="frameweb:NavigationAggregationTarget" type="//@compose.1/components%2FHeader%2F/Header" association="//@compose.1/pages%2F/@packagedElement.3"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:NavigationAggregationAssociation" memberEnd="//@compose.1/pages%2F/@packagedElement.3/@ownedEnd.0 //@compose.1/pages%2F/entrar/@ownedAttribute.0">
+        <ownedEnd xsi:type="frameweb:NavigationAggregationSource" type="//@compose.1/pages%2F/entrar" association="//@compose.1/pages%2F/@packagedElement.3"/>
+      </packagedElement>
     </packagedElement>
     <packagedElement xsi:type="frameweb:ControllerPackage" name="pages">
       <packagedElement xsi:type="frameweb:FrontControllerClass" name="jogar">
@@ -55,6 +61,12 @@
           <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
         </ownedAttribute>
         <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="opponet"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:FrontControllerClass" name="entrar">
+        <ownedAttribute xsi:type="frameweb:IOParameter" name="signInUrl">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:IOParameter" name="user" type="//@compose.0/br.ufes.informatica.oldenburg.core.domain/Usuario"/>
       </packagedElement>
     </packagedElement>
     <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/pages%2F/jogar" supplier="//@compose.1/pages/jogar" method="//@compose.1/pages/jogar/opponet"/>
@@ -73,5 +85,6 @@
       </packagedElement>
     </packagedElement>
     <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/components%2FHeader%2F/Header" supplier="//@compose.1/components%2FHeader/Header"/>
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/pages%2F/entrar" supplier="//@compose.1/pages/entrar"/>
   </compose>
 </frameweb:FramewebProject>
