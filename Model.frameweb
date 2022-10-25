@@ -147,6 +147,25 @@
         <ownedEnd xsi:type="frameweb:NavigationAggregationSource" type="//@compose.1/pages%2F.2/ranking" association="//@compose.1/pages%2F.2/@packagedElement.1"/>
         <spaAttributes attribute="//@compose.1/components%2FHeader%2F/Header/path"/>
       </packagedElement>
+      <packagedElement xsi:type="frameweb:Partial" name="sinuca">
+        <ownedAttribute xsi:type="frameweb:NavigationAggregationTarget" type="//@compose.1/components%2FHeader%2F/Header" association="//@compose.1/pages%2F.2/@packagedElement.3"/>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="Head">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="Select">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/External%20Component"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="imagem">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/img"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="descricao">
+          <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/div"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:NavigationAggregationAssociation" memberEnd="//@compose.1/pages%2F.2/@packagedElement.3/@ownedEnd.0 //@compose.1/pages%2F.2/sinuca/@ownedAttribute.0">
+        <ownedEnd xsi:type="frameweb:NavigationAggregationSource" type="//@compose.1/pages%2F.2/sinuca" association="//@compose.1/pages%2F.2/@packagedElement.3"/>
+        <spaAttributes attribute="//@compose.1/components%2FHeader%2F/Header/path"/>
+      </packagedElement>
     </packagedElement>
     <packagedElement xsi:type="frameweb:ControllerPackage" name="pages">
       <packagedElement xsi:type="frameweb:FrontControllerClass" name="ranking">
@@ -158,7 +177,16 @@
         </ownedAttribute>
         <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="useEffect"/>
       </packagedElement>
+      <packagedElement xsi:type="frameweb:FrontControllerClass" name="sinuca">
+        <ownedAttribute xsi:type="frameweb:IOParameter" name="imagem">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:IOParameter" name="descricao">
+          <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
+        </ownedAttribute>
+      </packagedElement>
     </packagedElement>
     <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/pages%2F.2/ranking" supplier="//@compose.1/pages.2/ranking"/>
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/pages%2F.2/sinuca" supplier="//@compose.1/pages.2/sinuca"/>
   </compose>
 </frameweb:FramewebProject>
