@@ -13,7 +13,7 @@ class perfil extends React.Component
 	
 	render() {  
       return (
-        <div><Head >{{ Head }}</Head><img src="user.picture">{{ user.picture }}</img><span id="info.nome">{{ info.nome }}</span><span id="info.vitorias">{{ info.vitorias }}</span><span id="info.vitorias">{{ info.vitorias }}</span><span id="rank">{{ rank }}</span><table id="table">{{ table }}</table>
+        <div><Head ></Head><img src="user.picture"></img><span id="info.nome">{{ info.nome }}</span><span id="info.vitorias">{{ info.vitorias }}</span><span id="info.vitorias">{{ info.vitorias }}</span><span id="rank">{{ rank }}</span><table id="table">{{ table }}</table>
 	<header path="" />
 	</div>
       );
