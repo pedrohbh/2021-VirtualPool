@@ -18,7 +18,7 @@ class jogar extends React.Component
 	
 	render() {  
       return (
-        <div><input type="checkbox" id="head">{{ head }}</input type="checkbox"><span id="user.nome">{{ user.nome }}</span><span id="opponent">{{ opponent }}</span><img src="user.picture"></img><img src="img2"></img><Head ></Head>
+        <div><head ></head><span id="user.nome">{{ user.nome }}</span><span id="opponent">{{ opponent }}</span><img src="user.picture"></img><img src="img2"></img><Head ></Head>
 	
 	<button onClick="opponet">opponet</button>
 	
