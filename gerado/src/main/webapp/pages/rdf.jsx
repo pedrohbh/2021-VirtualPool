@@ -23,7 +23,7 @@ class rdf extends React.Component
 	
 	render() {  
       return (
-        <div><{{attribute.Name}} id="Head">{{ Head }}</{{attribute.Name}}><div id="rdf">{{ rdf }}</div><div id="rdfAll">{{ rdfAll }}</div>
+        <div><Head id="Head">{{ Head }}</Head><div id="rdf">{{ rdf }}</div><div id="rdfAll">{{ rdfAll }}</div>
 	<header path="" />
 	</div>
       );

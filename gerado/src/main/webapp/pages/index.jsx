@@ -7,7 +7,7 @@ export default function index(props) {
 	
 	render() {  
       return (
-        <div><{{attribute.Name}} id="Head">{{ Head }}</{{attribute.Name}}><img src={{attribute.Name}} id="/images/vpoll">{{ /images/vpoll }}</img src={{attribute.Name}}>
+        <div><Head id="Head">{{ Head }}</Head><img src="/images/vpoll" id="/images/vpoll">{{ /images/vpoll }}</img src="/images/vpoll">
 	<header path="" />
 	</div>
       );
