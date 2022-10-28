@@ -42,6 +42,9 @@ class {{ partialProperties.get("partialName") }} extends React.Component
 			{%- elseif attribute.Type.Name == "outputText" -%}{%- set tag = "h:outputText" -%}
 			{%- elseif attribute.Type.Name == "panelGroup" -%}{%- set tag = "h:panelGroup" -%}
 			{%- elseif attribute.Type.Name == "selectManyListbox" -%}{%- set tag = "h:selectManyListbox" -%}
+			{%- elseif attribute.Type.Name == "a" -%}{%- set tag = "a href={{attribute.Name}}" -%}
+			{%- elseif attribute.Type.Name == "img" -%}{%- set tag = "img src={{attribute.Name}}" -%}
+			{%- elseif attribute.Type.Name == "External Component" -%}{%- set tag = "{{attribute.Name}}" -%}
 			{%- else -%}{%- set tag = attribute.Type.Name -%}{%- endif -%}
 				<{{ tag }} id="{{ attribute.Name }}">{{ left }} {{ attribute.Name }} {{ right }}</{{ tag }}>
 			{%- endif -%}{%- endfor -%}
