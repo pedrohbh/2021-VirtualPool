@@ -36,17 +36,18 @@ class {{ partialProperties.get("partialName") }} extends React.Component
    		{%- set right = "}}" -%}
 		{#- Define os atributos. -#}
 		{%- for attribute in partial.getOwnedAttributes() -%}{%- if not empty(attribute.Name) -%}
+		{%- set complementoTag = "id=\"" ~  attribute.Name ~ "\"" -%}
 			{%- if attribute.Type.Name == "span" -%}{%- set tag = "span" -%}
 			{%- elseif attribute.Type.Name == "p" -%}{%- set tag = "p" -%}
 			{%- elseif attribute.Type.Name == "h1" -%}{%- set tag = "h1" -%}
 			{%- elseif attribute.Type.Name == "outputText" -%}{%- set tag = "h:outputText" -%}
 			{%- elseif attribute.Type.Name == "panelGroup" -%}{%- set tag = "h:panelGroup" -%}
 			{%- elseif attribute.Type.Name == "selectManyListbox" -%}{%- set tag = "h:selectManyListbox" -%}
-			{%- elseif attribute.Type.Name == "a" -%}{%- set tag = "a href=\"" ~ attribute.Name ~ "\"" -%}
-			{%- elseif attribute.Type.Name == "img" -%}{%- set tag = "img src=\"" ~ attribute.Name ~ "\"" -%}
-			{%- elseif attribute.Type.Name == "External Component" -%}{%- set tag = attribute.Name -%}
+			{%- elseif attribute.Type.Name == "a" -%}{%- set tag = "a" -%}{%- set complementoTag = "href=\"" ~ attribute.Name ~ "\"" -%}
+			{%- elseif attribute.Type.Name == "img" -%}{%- set tag = "img"  -%}{%- set complementoTag = "src=\"" ~ attribute.Name ~ "\"" -%}
+			{%- elseif attribute.Type.Name == "External Component" -%}{%- set tag = attribute.Name -%}{%- set complementoTag = "" -%}
 			{%- else -%}{%- set tag = attribute.Type.Name -%}{%- endif -%}
-				<{{ tag }} id="{{ attribute.Name }}">{{ left }} {{ attribute.Name }} {{ right }}</{{ tag }}>
+				<{{ tag }} {{complementoTag}}>{{ left }} {{ attribute.Name }} {{ right }}</{{ tag }}>
 			{%- endif -%}{%- endfor -%}
 	{% if partialProperties.get("hasMethod") %}
 	{% for metodoInvocado in partialProperties.get("invocatedMethodsNames") %}

@@ -13,7 +13,7 @@ class entrar extends React.Component
 	
 	render() {  
       return (
-        <div><a href="signInUrl" id="signInUrl">{{ signInUrl }}</a href="signInUrl"><Head id="Head">{{ Head }}</Head>
+        <div><a href="signInUrl">{{ signInUrl }}</a><Head >{{ Head }}</Head>
 	<header path="" />
 	</div>
       );

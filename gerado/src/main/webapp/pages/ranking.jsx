@@ -18,7 +18,7 @@ class ranking extends React.Component
 	
 	render() {  
       return (
-        <div><Head id="Head">{{ Head }}</Head><table id="table">{{ table }}</table>
+        <div><Head >{{ Head }}</Head><table id="table">{{ table }}</table>
 	<header path="" />
 	</div>
       );

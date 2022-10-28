@@ -13,7 +13,7 @@ class sinuca extends React.Component
 	
 	render() {  
       return (
-        <div><Head id="Head">{{ Head }}</Head><Select id="Select">{{ Select }}</Select><img src="imagem" id="imagem">{{ imagem }}</img src="imagem"><div id="descricao">{{ descricao }}</div>
+        <div><Head >{{ Head }}</Head><Select >{{ Select }}</Select><img src="imagem">{{ imagem }}</img><div id="descricao">{{ descricao }}</div>
 	<header path="" />
 	</div>
       );
