@@ -12,7 +12,7 @@ export default function jogo(props) {
 	
 	render() {  
       return (
-        <div><Head ></Head><span id="texto">{{ texto }}</span><img src="/images/mesaInteira.jpg"></img>
+        <div><Head ></Head><span id="texto">{{ texto }}</span><img src={/images/mesaInteira.jpg}></img>
 	
 	<button onClick="jogar">jogar</button>
 	

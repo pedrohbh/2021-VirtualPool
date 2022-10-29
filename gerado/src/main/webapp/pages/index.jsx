@@ -7,7 +7,7 @@ export default function index(props) {
 	
 	render() {  
       return (
-        <div><Head ></Head><img src="/images/vpoll"></img>
+        <div><Head ></Head><img src={/images/vpoll}></img>
 	<header path="" />
 	</div>
       );
