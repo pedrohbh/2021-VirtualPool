@@ -23,7 +23,7 @@ class jogar extends React.Component
 	<button onClick="opponet">opponet</button>
 	
 	
-	<header path="" />
+	<header asPath="" />
 	</div>
       );
     }

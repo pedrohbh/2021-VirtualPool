@@ -6,14 +6,14 @@ class Header extends React.Component
 	constructor(props)
 	{
 		super(props);		
-		this.state = {path : ""};		
+		this.state = {asPath : ""};		
 	}
 
 	
 	
 	render() {  
       return (
-        <div><p id="path">{{ path }}</p><Link ></Link><Link ></Link><Link ></Link><Link ></Link><Link ></Link><Link ></Link></div>
+        <div><li id="asPath">{{ asPath }}</li><Link ></Link><Link ></Link><Link ></Link><Link ></Link><Link ></Link><Link ></Link><li id="asPath">{{ asPath }}</li><li id="asPath">{{ asPath }}</li><li id="asPath">{{ asPath }}</li><li id="asPath">{{ asPath }}</li></div>
       );
     }
   }
