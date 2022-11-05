@@ -48,7 +48,18 @@ class {{ partialProperties.get("partialName") }} extends React.Component
 			{%- elseif attribute.Type.Name == "img" -%}{%- set tag = "img"  -%}{%- set complementoTag = "src={" ~ attribute.Name ~ "}" -%}{%- set temAtributoNome = false -%}
 			{%- elseif attribute.Type.Name == "External Component" -%}{%- set tag = attribute.Name -%}{%- set complementoTag = "" -%}{%- set temAtributoNome = false -%}
 			{%- else -%}{%- set tag = attribute.Type.Name -%}{%- endif -%}
+			{%- if tag == "table" -%}
+			<table>
+				<tr>
+					<th>{{ left }} {{ attribute.Name }} {{ right }}</th>
+				</tr>
+				<tr>
+					<td>{{ left }} {{ attribute.Name }} {{ right }}</td>
+				</tr>
+			</table>
+			{%- else -%}
 				<{{ tag }} {{complementoTag}}>{%- if temAtributoNome -%}{{ left }} {{ attribute.Name }} {{ right }}{%- endif -%}</{{ tag }}>
+			{%- endif -%}
 			{%- endif -%}{%- endfor -%}
 	{% if partialProperties.get("hasMethod") %}
 	{% for metodoInvocado in partialProperties.get("invocatedMethodsNames") %}

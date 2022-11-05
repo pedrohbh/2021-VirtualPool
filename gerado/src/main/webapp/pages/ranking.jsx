@@ -18,7 +18,14 @@ class ranking extends React.Component
 	
 	render() {  
       return (
-        <div><Head ></Head><table id="table">{{ table }}</table>
+        <div><Head ></Head><table>
+				<tr>
+					<th>{{ table }}</th>
+				</tr>
+				<tr>
+					<td>{{ table }}</td>
+				</tr>
+			</table>
 	<header asPath="" />
 	</div>
       );
