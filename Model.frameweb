@@ -42,7 +42,7 @@
       </packagedElement>
       <packagedElement xsi:type="frameweb:NavigationAggregationAssociation" memberEnd="//@compose.1/pages%2F/@packagedElement.1/@ownedEnd.0 //@compose.1/pages%2F/jogar/@ownedAttribute.5">
         <ownedEnd xsi:type="frameweb:NavigationAggregationSource" type="//@compose.1/pages%2F/jogar" association="//@compose.1/pages%2F/@packagedElement.1"/>
-        <spaAttributes attribute="//@compose.1/components%2FHeader%2F/Header/path"/>
+        <spaAttributes attribute="//@compose.1/components%2FHeader%2F/Header/asPath"/>
       </packagedElement>
       <packagedElement xsi:type="frameweb:Partial" name="entrar">
         <ownedAttribute xsi:type="frameweb:NavigationAggregationTarget" type="//@compose.1/components%2FHeader%2F/Header" association="//@compose.1/pages%2F/@packagedElement.3"/>
@@ -55,7 +55,7 @@
       </packagedElement>
       <packagedElement xsi:type="frameweb:NavigationAggregationAssociation" memberEnd="//@compose.1/pages%2F/@packagedElement.3/@ownedEnd.0 //@compose.1/pages%2F/entrar/@ownedAttribute.0">
         <ownedEnd xsi:type="frameweb:NavigationAggregationSource" type="//@compose.1/pages%2F/entrar" association="//@compose.1/pages%2F/@packagedElement.3"/>
-        <spaAttributes attribute="//@compose.1/components%2FHeader%2F/Header/path"/>
+        <spaAttributes attribute="//@compose.1/components%2FHeader%2F/Header/asPath"/>
       </packagedElement>
     </packagedElement>
     <packagedElement xsi:type="frameweb:ControllerPackage" name="pages">
@@ -85,7 +85,7 @@
     <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/pages%2F/jogar" supplier="//@compose.1/pages/jogar" method="//@compose.1/pages/jogar/opponet"/>
     <packagedElement xsi:type="frameweb:ViewPackage" name="components/Header/">
       <packagedElement xsi:type="frameweb:Partial" name="Header">
-        <ownedAttribute xsi:type="frameweb:UIComponentField" name="path">
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="asPath">
           <type xsi:type="frameweb:Tag" href="frameweb/jbutler/NavigationModel_JButler_JSF_PrimeFaces.frameweb#//@configures.0/HTML/p"/>
         </ownedAttribute>
         <ownedAttribute xsi:type="frameweb:UIComponentField" name="Link">
@@ -110,7 +110,7 @@
     </packagedElement>
     <packagedElement xsi:type="frameweb:ControllerPackage" name="components/Header">
       <packagedElement xsi:type="frameweb:FrontControllerClass" name="Header">
-        <ownedAttribute xsi:type="frameweb:IOParameter" name="path">
+        <ownedAttribute xsi:type="frameweb:IOParameter" name="asPath">
           <type xsi:type="uml:Class" href="frameweb/Java.frameweb#//@compose.0/String"/>
         </ownedAttribute>
       </packagedElement>
@@ -129,7 +129,7 @@
       </packagedElement>
       <packagedElement xsi:type="frameweb:NavigationAggregationAssociation" memberEnd="//@compose.1/pages%2F.1/@packagedElement.1/@ownedEnd.0 //@compose.1/pages%2F.1/index/@ownedAttribute.1">
         <ownedEnd xsi:type="frameweb:NavigationAggregationSource" type="//@compose.1/pages%2F.1/index" association="//@compose.1/pages%2F.1/@packagedElement.1"/>
-        <spaAttributes attribute="//@compose.1/components%2FHeader%2F/Header/path"/>
+        <spaAttributes attribute="//@compose.1/components%2FHeader%2F/Header/asPath"/>
       </packagedElement>
       <packagedElement xsi:type="frameweb:Partial" name="jogo">
         <ownedAttribute xsi:type="frameweb:UIComponentField" name="Head">
@@ -156,7 +156,7 @@
       </packagedElement>
       <packagedElement xsi:type="frameweb:NavigationAggregationAssociation" memberEnd="//@compose.1/pages%2F.1/@packagedElement.4/@ownedEnd.0 //@compose.1/pages%2F.1/rdf/@ownedAttribute.1">
         <ownedEnd xsi:type="frameweb:NavigationAggregationSource" type="//@compose.1/pages%2F.1/rdf" association="//@compose.1/pages%2F.1/@packagedElement.4"/>
-        <spaAttributes attribute="//@compose.1/components%2FHeader%2F/Header/path"/>
+        <spaAttributes attribute="//@compose.1/components%2FHeader%2F/Header/asPath"/>
       </packagedElement>
     </packagedElement>
     <packagedElement xsi:type="frameweb:ControllerPackage" name="pages">
@@ -189,7 +189,7 @@
       </packagedElement>
       <packagedElement xsi:type="frameweb:NavigationAggregationAssociation" memberEnd="//@compose.1/pages%2F.2/@packagedElement.1/@ownedEnd.0 //@compose.1/pages%2F.2/ranking/@ownedAttribute.0">
         <ownedEnd xsi:type="frameweb:NavigationAggregationSource" type="//@compose.1/pages%2F.2/ranking" association="//@compose.1/pages%2F.2/@packagedElement.1"/>
-        <spaAttributes attribute="//@compose.1/components%2FHeader%2F/Header/path"/>
+        <spaAttributes attribute="//@compose.1/components%2FHeader%2F/Header/asPath"/>
       </packagedElement>
       <packagedElement xsi:type="frameweb:Partial" name="sinuca">
         <ownedAttribute xsi:type="frameweb:NavigationAggregationTarget" type="//@compose.1/components%2FHeader%2F/Header" association="//@compose.1/pages%2F.2/@packagedElement.3"/>
@@ -208,7 +208,7 @@
       </packagedElement>
       <packagedElement xsi:type="frameweb:NavigationAggregationAssociation" memberEnd="//@compose.1/pages%2F.2/@packagedElement.3/@ownedEnd.0 //@compose.1/pages%2F.2/sinuca/@ownedAttribute.0">
         <ownedEnd xsi:type="frameweb:NavigationAggregationSource" type="//@compose.1/pages%2F.2/sinuca" association="//@compose.1/pages%2F.2/@packagedElement.3"/>
-        <spaAttributes attribute="//@compose.1/components%2FHeader%2F/Header/path"/>
+        <spaAttributes attribute="//@compose.1/components%2FHeader%2F/Header/asPath"/>
       </packagedElement>
       <packagedElement xsi:type="frameweb:Partial" name="perfil">
         <ownedAttribute xsi:type="frameweb:UIComponentField" name="Head">
@@ -236,7 +236,7 @@
       </packagedElement>
       <packagedElement xsi:type="frameweb:NavigationAggregationAssociation" memberEnd="//@compose.1/pages%2F.2/@packagedElement.5/@ownedEnd.0 //@compose.1/pages%2F.2/perfil/@ownedAttribute.1">
         <ownedEnd xsi:type="frameweb:NavigationAggregationSource" type="//@compose.1/pages%2F.2/perfil" association="//@compose.1/pages%2F.2/@packagedElement.5"/>
-        <spaAttributes attribute="//@compose.1/components%2FHeader%2F/Header/path"/>
+        <spaAttributes attribute="//@compose.1/components%2FHeader%2F/Header/asPath"/>
       </packagedElement>
     </packagedElement>
     <packagedElement xsi:type="frameweb:ControllerPackage" name="pages">
