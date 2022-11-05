@@ -13,7 +13,7 @@ class Header extends React.Component
 	
 	render() {  
       return (
-        <div><p id="path">{{ path }}</p></div>
+        <div><p id="path">{{ path }}</p><Link ></Link><Link ></Link><Link ></Link><Link ></Link><Link ></Link><Link ></Link></div>
       );
     }
   }
